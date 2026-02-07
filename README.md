@@ -39,5 +39,3 @@ Tech Stack
 Database: MySQL 8.0
 Tool: MySQL Workbench
 Techniques: Joins, Window Functions (OVER, PARTITION BY), CTEs (Common Table Expressions), Data Aggregation.
-
-This project was made possible thanks to the excellent SQL Data Analyst Portfolio Project tutorial by Data with Baraa on YouTube. You can check out the full tutorial here: https://www.youtube.com/watch?v=2jGhQpbzHes.
