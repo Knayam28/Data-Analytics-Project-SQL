@@ -1,5 +1,5 @@
-Data Analytics Project (SQL)
-Project Overview
+#Data Analytics Project (SQL)
+Project Overview/
 This project demonstrates a comprehensive data analytics pipeline using MySQL. It involves building a data warehouse schema, importing raw CSV data, and performing advanced SQL analysis to derive business insights.
 
 The goal is to analyze sales trends, customer behavior, and product performance using a structured Star Schema architecture.
