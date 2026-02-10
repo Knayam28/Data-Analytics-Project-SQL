@@ -1,41 +1,79 @@
 # Data Analytics Project (SQL)
 
-This project demonstrates a comprehensive data analytics pipeline using MySQL. It involves building a data warehouse schema, importing raw CSV data, and performing advanced SQL analysis to derive business insights.
+Project Overview
+This project demonstrates the end-to-end process of building a data analytics environment using SQL (MySQL). It involves setting up a relational schema (Star Schema), optimizing bulk data loading, cleaning data, and performing advanced analytical queries to derive business insights.
 
-The goal is to analyze sales trends, customer behavior, and product performance using a structured Star Schema architecture.
+The project answers critical business questions regarding sales trends, customer behavior, and product performance using advanced SQL techniques like Window Functions, CTEs, and Segmentation Logic.
 
-Database Schema
-The project uses a Star Schema with one central fact table and two dimension tables:
+Repository Structure
+1. Database Setup & ETL
+schema.sql: Defines the database datawarehouse_analytics_db and creates the Star Schema tables:
 
-fact_sales: The central table containing transactional data (orders, dates, sales amounts, quantities).
+fact_sales: Transactional data (orders, dates, amounts).
 
-dim_customers: detailed customer information (demographics, location, age).
+dim_customers: Customer demographics and details.
 
-dim_products: Product catalog details (categories, subcategories, costs).
+dim_products: Product attributes, categories, and costs.
 
-Key Features & Analysis
-This repository contains SQL scripts covering the following analytical areas:
+uploading file.sql: A high-performance bulk data loading script.
 
-1. Time-Series Analysis
-Yearly & Monthly Trends: Analyzing how sales, customer counts, and quantities change over time.
+Key Feature: Disables autocommit and keys checks to speed up LOAD DATA LOCAL INFILE operations for large datasets.
 
-Cumulative Analysis: Calculating running totals and moving averages to track growth momentum.
+2. Analytical Scripts
+These scripts focus on extracting specific insights:
 
-2. Product Performance
-Year-over-Year Growth: Comparing current sales to previous years to identify growth or decline.
+1.changes over time year.sql: Aggregates sales, customer counts, and quantities by year. Includes data cleaning steps to handle invalid dates.
 
-Product Segmentation: Categorizing products into "High-Performer," "Mid-Range," and "Low-Performer" based on revenue.
+2.changes over month.sql: Drills down into seasonal trends by aggregating sales, customers, and quantity on a monthly basis using DATE_FORMAT.
 
-Pareto/Proportional Analysis: Identifying which product categories contribute the most to overall revenue.
+3.cumulative analysis.sql: Calculates running totals and moving averages for sales and prices over time using Window Functions.
 
-3. Customer Segmentation (RFM & Demographics)
-VIP vs. Regular: Segmenting customers into VIP, Regular, and New groups based on lifespan and spending history.
+4.performace analysis.sql: Detailed product analysis comparing current sales against:
 
-Age Demographics: Grouping customers into age buckets (Under 20, 20-29, etc.) for targeted insights.
+The average performance of that product (Above/Below Avg).
 
-Advanced KPIs: Calculating Recency (months since last order), Average Order Value, and Lifespan.
+The previous year's sales (Growth/Decline) using LAG().
 
-Tech Stack
-Database: MySQL 8.0
-Tool: MySQL Workbench
-Techniques: Joins, Window Functions (OVER, PARTITION BY), CTEs (Common Table Expressions), Data Aggregation.
+5.proportional analysis.sql: Calculates the percentage contribution of each product category to the overall global sales.
+
+6.data segmentation1.sql: Segments products into cost buckets (e.g., "Below 100", "100-500") to analyze inventory distribution.
+
+7.data segmentation2.sql: Segments customers into VIP, Regular, and New groups based on spending history (> $5000) and relationship lifespan (> 12 months).
+
+3. Comprehensive Reporting
+8.customer metric.sql: A master customer report using CTEs (WITH clauses) to calculate KPIs:
+
+Recency: Months since the last order.
+
+AOV: Average Order Value.
+
+Lifespan: Duration of customer relationship.
+
+9.product_metric.sql: A master product report using CTEs to consolidate metrics and identify product health:
+
+Segmentation: Flags products as High-Performer (>$50k), Mid-Range, or Low-Performer.
+
+Revenue KPIs: Calculates Average Order Revenue (AOR) and Average Monthly Revenue.
+
+Recency: Tracks months since the last sale to identify stale inventory.
+
+Key SQL Skills Demonstrated
+Window Functions: OVER(), PARTITION BY, LAG(), SUM() OVER(), AVG() OVER().
+
+Common Table Expressions (CTEs): Used heavily in reports (e.g., base_data, product_metric) for readability and modularity.
+
+Data Aggregation: GROUP BY with multi-level summaries and DATE_FORMAT for time-series analysis.
+
+Logic & Control Flow: CASE WHEN statements for dynamic customer and product segmentation.
+
+Date Manipulation: TIMESTAMPDIFF for calculating lifespans and recency.
+
+Performance Optimization: Bulk loading configurations (local_infile, foreign_key_checks).
+
+
+Sample Insights
+Customer Segmentation: Customers are automatically tagged as 'VIP' if they have a history >12 months and spend >$5000.
+
+Sales Trends: The cumulative analysis tracks how sales momentum builds month-over-month.
+
+Product Performance: Products are flagged as "High-Performer" if total revenue exceeds $50,000.
