@@ -3,11 +3,9 @@
 ## Project Overview
 This project demonstrates the end-to-end process of building a data analytics environment using **SQL (MySQL)**. It involves setting up a relational schema (Star Schema), optimizing bulk data loading, cleaning data, and performing advanced analytical queries to derive business insights.
 
-<img width="652" height="743" alt="image" src="https://github.com/user-attachments/assets/f1c820b3-31d3-4351-89e8-46db509ecfc9" />
-
-<img width="1603" height="742" alt="image" src="https://github.com/user-attachments/assets/7112ad60-de25-492e-b691-bd2e4df2ee58" />
-
 The project answers critical business questions regarding sales trends, customer behavior, and product performance using advanced SQL techniques like **Window Functions**, **CTEs**, and **Segmentation Logic**.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/660f3777-22fe-485a-92ca-665f5b714088" />
 
 ## Repository Structure
 
