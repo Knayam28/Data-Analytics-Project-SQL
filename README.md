@@ -3,11 +3,15 @@
 ## Project Overview
 This project demonstrates the end-to-end process of building a data analytics environment using **SQL (MySQL)**. It involves setting up a relational schema (Star Schema), optimizing bulk data loading, cleaning data, and performing advanced analytical queries to derive business insights.
 
+<img width="652" height="743" alt="image" src="https://github.com/user-attachments/assets/f1c820b3-31d3-4351-89e8-46db509ecfc9" />
+
+<img width="1603" height="742" alt="image" src="https://github.com/user-attachments/assets/7112ad60-de25-492e-b691-bd2e4df2ee58" />
+
 The project answers critical business questions regarding sales trends, customer behavior, and product performance using advanced SQL techniques like **Window Functions**, **CTEs**, and **Segmentation Logic**.
 
 ## Repository Structure
 
-### 1. Database Setup & ETL
+### 1. Database Setup
 * **`schema.sql`**: Defines the database `datawarehouse_analytics_db` and creates the Star Schema tables:
     * **`fact_sales`**: Transactional data (orders, dates, amounts).
     * **`dim_customers`**: Customer demographics and details.
@@ -46,7 +50,14 @@ These scripts focus on extracting specific insights:
 * **Date Manipulation:** `TIMESTAMPDIFF` for calculating lifespans and recency.
 * **Performance Optimization:** Bulk loading configurations (`local_infile`, `foreign_key_checks`).
 
+## Tableau Visualizations
+The SQL outputs are further visualized using **Tableau** to communicate insights effectively.
+📂 See the **`/Tableau`** folder for:
+- Category-wise total sales dashboards  
+- Sales contribution (%) visualizations  
+- Product and customer performance reports  
 
+---
 
 ## Insights
 * **Customer Segmentation:** Customers are automatically tagged as 'VIP' if they have a history >12 months and spend >$5000.
