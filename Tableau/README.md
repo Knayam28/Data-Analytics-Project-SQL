@@ -1,92 +1,66 @@
-## Tableau Visualizations
-Overview
+# Tableau Visualizations
 
-This folder contains Tableau dashboards built on top of SQL-derived analytical outputs from the main project.
-All visualizations are a continuation of the SQL analysis, focusing on translating query results into clear, business-ready insights.
+## Overview
 
-The Tableau dashboards help answer “what does this mean?” after the SQL answers “what is happening?”
+This folder contains **Tableau dashboards built as a continuation of the SQL-based data analytics project**.  
+The visualizations are created using **aggregated outputs from SQL queries**, focusing on transforming analytical results into **business-friendly insights**.
 
-Files in This Folder
-1. report_product_metric.twb
+Tableau is used here for **insight communication and reporting**, not raw data processing.
 
-Product Performance Dashboard
+---
 
-Visualizes insights generated from product_metric.sql, including:
+## Contents
 
-Total Sales & Quantity by Product
+### 1️ `report_product_metric.twb`  
+**Product Performance Dashboard**
 
-Sales vs Quantity analysis
+Based on outputs from `product_metric.sql`.
 
-Top 10 Products by Total Sales
+**Visualizations include:**
+- Category-wise and product-level total sales
+- Sales vs Quantity analysis
+- Top 10 products by total sales
 
-Product performance distribution
+**Business Insights:**
+- Identifies high- and low-performing products
+- Highlights revenue-heavy but low-quantity products
+- Helps detect underperforming or stale inventory
 
-Key Insights:
+---
 
-Identifies high-performing vs low-performing products
+### 2️ `report_customer_metric.twb`  
+**Customer Analytics Dashboard**
 
-Highlights products with high revenue but low quantity (premium items)
+Built using results from `customer_metric.sql`.
 
-Helps detect stale or underperforming inventory
+**Visualizations include:**
+- Customer segmentation (VIP / Regular / New)
+- Customer distribution and spending behavior
 
-2. report_customer_metric.twb
+**Business Insights:**
+- Identifies high-value customers
+- Supports customer retention and targeting strategies
 
-Customer Analytics Dashboard
+---
 
-Built using outputs from customer_metric.sql, focusing on:
+### 3️ `CategorySalesContribution.twb`  
+**Category Sales Contribution Dashboard**
 
-Customer segmentation (VIP / Regular / New)
+Focused on category-level analysis.
 
-Customer distribution patterns
+**Visualizations include:**
+- Category-wise total sales
+- Percentage contribution of each category to overall revenue
 
-Spending behavior analysis
+**Business Insights:**
+- Reveals dominant revenue-driving categories
+- Highlights low-contribution categories
 
-Key Insights:
+---
 
-Identifies high-value customers
+## Analytical Workflow
 
-Supports customer retention and targeting strategies
-
-3. CategorySalesContribution.twb
-
-Category Sales Contribution Dashboard
-
-A focused dashboard visualizing:
-
-Category-wise total sales
-
-Percentage contribution of each category to overall revenue
-
-Key Insights:
-
-Reveals dominant revenue-driving categories
-
-Highlights categories with low contribution despite product variety
-
-Tableau is not used for raw analysis, but for:
-
-Insight communication
-
-Stakeholder-friendly reporting
-
-Visual validation of SQL results
-
-🛠️ Tools Used
-
-Tableau Desktop Public Edition
-
-MySQL (data source via CSV exports from SQL queries)
-
-Notes
-
-All .twb files reference locally exported CSVs
-
-Dashboards are designed for analytical clarity, not decorative visuals
-
-Focus is on business insight delivery
-
-Related
-
-SQL queries powering these dashboards can be found in the root /sql_files directory.
-
-Project overview and SQL documentation are available in the main README.md.
+```text
+Raw Data → SQL Analysis (CTEs, Window Functions, Segmentation)
+        → Aggregated Reports (Customer & Product Metrics)
+        → Tableau Dashboards (Insight Communication)
