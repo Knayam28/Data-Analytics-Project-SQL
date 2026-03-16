@@ -57,7 +57,3 @@ The SQL outputs are further visualized using **Tableau** to communicate insights
 
 ---
 
-## Insights
-* **Customer Segmentation:** Customers are automatically tagged as 'VIP' if they have a history >12 months and spend >$5000.
-* **Sales Trends:** The cumulative analysis tracks how sales momentum builds month-over-month.
-* **Product Performance:** Products are flagged as "High-Performer" if total revenue exceeds $50,000.
